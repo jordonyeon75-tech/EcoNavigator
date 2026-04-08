@@ -1,0 +1,95 @@
+/* General Page Styling */
+body {
+    background-color: #151515;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Main Card */
+.welcome-container {
+    background-color: #1a1a1a;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    border: 1px solid #1f1f1f;
+}
+
+h1 {
+    color: #4dfb4d; /* Success Green */
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.subtitle {
+    color: #888;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+/* Feature List Styling */
+.content-box {
+    text-align: left;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.feature-list li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #ddd;
+}
+
+.feature-list li .icon {
+    margin-right: 12px;
+    font-size: 18px;
+}
+
+.feature-list li strong {
+    color: white;
+    margin-right: 5px;
+}
+
+.footer-msg {
+    text-align: center;
+    font-style: italic;
+    color: #aaa;
+    margin-top: 20px;
+}
+
+/* Button Styling */
+.login-btn {
+    display: inline-block;
+    width: 100%;
+    padding: 15px 0;
+    background-color: white;
+    color: #151515;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: transform 0.2s, opacity 0.2s;
+    box-sizing: border-box;
+}
+
+.login-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}

@@ -1,0 +1,243 @@
+body {
+       font-family: Inter, Arial, sans-serif;
+       margin: 18px;
+       background: #f3f6f9;
+       color: #1f2937;
+   }
+
+.page-header h1 {
+    text-align: center;
+    margin: 6px 0 18px;
+    font-weight: 600;
+}
+
+.home-btn {
+    padding: 8px 16px;
+    background: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.home-btn:hover {
+    background: #218838;
+}
+
+/* Filters panel */
+.filters-panel {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.filters-row {
+    background: #fff;
+    padding: 12px 14px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(16,24,40,0.04);
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-item { display:flex; flex-direction:column; }
+.filter-item label { font-size: 13px; margin-bottom: 6px; color: #374151; }
+.filter-item select, .filter-item input {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    min-width: 180px;
+}
+
+/* Action buttons */
+.filter-actions { display:flex; gap:8px; align-items:flex-end; }
+#apply-filter, .btn-clear {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+#apply-filter { background: #2563eb; color: #fff; }
+.btn-clear { background: #e5e7eb; color: #111; }
+
+/* Stations grid */
+.stations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin: 18px 0;
+}
+
+/* Card */
+.station-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+    padding: 14px;
+    transition: transform .15s ease, box-shadow .15s ease;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+.station-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(15,23,42,0.08); }
+
+.card-head { display:flex; justify-content:space-between; align-items:center; gap:8px; }
+.station-title { font-size: 16px; margin:0; color:#0f172a; }
+.station-actions { display:flex; gap:8px; align-items:center; }
+.station-actions select { padding:6px 8px; border-radius:8px; border:1px solid #e5e7eb; }
+.station-actions button { padding:6px 10px; border-radius:8px; border:none; cursor:pointer; background:#2563eb; color:#fff; }
+.station-body p { margin: 2px 0; font-size:13px; color:#374151; }
+.station-body .small { font-size:12px; color:#6b7280 }
+
+/* Pagination */
+.pagination { display:flex; justify-content:center; gap:10px; align-items:center; margin-bottom:40px; }
+.pagination button {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border:none;
+    background:#2563eb;
+    color:#fff;
+    cursor:pointer;
+}
+.pagination button:disabled { background:#c7d2fe; cursor:not-allowed; }
+.page-info { color:#374151; }
+
+/* Date input styles */
+.date-inputs {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.date-inputs input,
+.date-inputs select {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+}
+
+/* status badge design */
+.status-badge {
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Available */
+.status-badge[data-status="Available"] {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+/* Out of Service */
+.status-badge[data-status="Out of Service"] {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* Under Maintain */
+.status-badge[data-status="Under Maintain"] {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.result-count {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #374151;
+}
+
+/* No results */
+.no-results { text-align:center; padding:30px; color:#6b7280; grid-column: 1/-1; }
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .stations-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+    .stations-grid { grid-template-columns: 1fr; }
+    .filters-row { flex-direction: column; align-items:stretch; gap:12px; }
+}
+/* =========================================
+   RESPONSIVE DESIGN (TABLETS & MOBILE)
+   ========================================= */
+
+@media (max-width: 768px) {
+    /* 1. Header Area */
+    .page-header {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    /* 2. Top 4 Summary Cards (Make them a 2x2 grid on medium screens) */
+    .dashboard-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    /* 3. Filters Panel (Stack vertically and stretch to 100%) */
+    .filters-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .filter-item {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .filter-item label {
+        margin-bottom: 6px;
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .filter-item input,
+    .filter-item select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        box-sizing: border-box; /* ensures padding doesn't break width */
+    }
+
+    .filter-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .filter-actions button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    /* 4. Stations Grid (Force to 1 column) */
+    .stations-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+    }
+}
+
+/* For Very Small Phones (max-width: 480px) */
+@media (max-width: 480px) {
+    /* Force the 4 dashboard cards to stack 1 by 1 instead of 2x2 */
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+}

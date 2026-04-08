@@ -1,0 +1,317 @@
+/* css/design_table.css */
+
+/* General Page Styling */
+body {
+    background-color: #151515; /* Main background */
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+/* Center Title and give it the Success Green color */
+h1 {
+    color: #FFFFFF;
+    margin-bottom: 25px;
+    font-size: 28px;
+    text-align: center;
+}
+
+/* Main Container - Blends perfectly with the background */
+.table-container {
+    background-color: #151515; /* Changed to match body */
+    padding: 10px 30px 30px 30px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Action Buttons (Top left) */
+.actions {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Table Styling - Now pops out as the main card */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 0 20px 0;
+    background-color: #1a1a1a; /* Changed table background to #1a1a1a */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Drop shadow applied directly to the table */
+}
+
+th, td {
+    border: 1px solid #2a2a2a; /* Subtle borders */
+    padding: 14px 15px;
+    text-align: left;
+    color: #ccc;
+}
+
+th {
+    background-color: #1f1f1f; /* Keeps the slightly darker header background */
+    color: #FFFFFF; /* Pure white text so it is incredibly easy to read */
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #4dfb4d; /* A sleek green accent line under the headers */
+}
+
+/* Subtle hover effect for table rows */
+tbody tr:hover {
+    background-color: #252525;
+}
+
+/* General Button Styling */
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #4dfb4d;
+    color: #151515;
+    transform: translateY(-2px); /* Makes the button float up slightly */
+    box-shadow: 0 4px 10px rgba(77, 251, 77, 0.2); /* Soft green glow */
+}
+
+/* Specific Button Colors & Custom Hovers */
+.btn-delete-selected {
+    background-color: #ff9800;
+    color: white;
+}
+.btn-delete-selected:hover {
+    background-color: #ffb74d; /* Brighter orange */
+    color: #151515;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 152, 0, 0.3);
+}
+
+.btn-delete-all {
+    background-color: #cc0000;
+    color: white;
+}
+.btn-delete-all:hover {
+    background-color: #ff4d4d; /* Brighter red */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(204, 0, 0, 0.3);
+}
+
+.btn-navigate {
+    background-color: #4dfb4d;
+    color: #151515;
+}
+.btn-navigate:hover {
+    background-color: #8aff8a; /* Glowing lighter green */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(77, 251, 77, 0.4);
+}
+
+.btn-delete {
+    background-color: #ff4d4d;
+    color: white;
+}
+.btn-delete:hover {
+    background-color: #ff8080; /* Soft bright red */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 77, 77, 0.3);
+}
+
+/* Pagination Styling */
+.pagination {
+    margin: 20px 0 0 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.pagination button {
+    background-color: #1a1a1a;
+    color: #888;
+    border: 1px solid #333;
+    padding: 6px 12px;
+}
+
+.pagination button:hover {
+    background-color: #4dfb4d;
+    color: #151515;
+    border-color: #4dfb4d;
+    transform: translateY(-2px);
+}
+
+/* Highlight the active page */
+.pagination button.active-page {
+    background-color: #4dfb4d;
+    color: #151515;
+    font-weight: bold;
+    border-color: #4dfb4d;
+    transform: none; /* Keeps the active page flat so it stands out */
+    box-shadow: none;
+}
+
+/* Checkboxes */
+input[type="checkbox"] {
+    accent-color: #4dfb4d;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* --- MANAGE MODE BUTTONS --- */
+.btn-manage {
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+}
+.btn-manage:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.btn-cancel {
+    background-color: #666;
+    color: white;
+}
+.btn-cancel:hover {
+    background-color: #888;
+    transform: translateY(-2px);
+}
+
+/* --- SMOOTH CHECKBOX ANIMATION --- */
+/* Hide the column completely by default */
+.th-checkbox, .td-checkbox {
+    padding: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+    transition: all 0.3s ease-in-out;
+}
+
+/* The wrapper inside the cell handles the sliding width */
+.checkbox-wrapper {
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* When Edit Mode is active, expand the padding and wrapper */
+.delete-mode .th-checkbox,
+.delete-mode .td-checkbox {
+    padding: 14px 15px !important;
+    border-right: 1px solid #2a2a2a !important;
+}
+
+.delete-mode .checkbox-wrapper {
+    width: 20px; /* Opens up space for the checkbox */
+    opacity: 1;
+}
+
+/* =======================================================
+   RESPONSIVE DESIGN (Phones, iPads, Laptops, Big Screens)
+   ======================================================= */
+/* --- SMALL LAPTOPS & BIG IPADS (Max Width: 1200px) --- */
+@media screen and (max-width: 1200px) {
+    .table-container {
+        max-width: 95%; /* Use percentage to breathe nicely on smaller laptops */
+        padding: 15px 20px 25px 20px;
+    }
+}
+
+/* --- IPAD / TABLETS (Max Width: 992px) --- */
+@media screen and (max-width: 992px) {
+    body {
+        padding: 20px 15px; /* Reduce outer padding */
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    th, td {
+        padding: 12px 10px; /* Make columns slightly tighter */
+        font-size: 14px; /* Slightly smaller text */
+    }
+
+    /* Wrap buttons nicely if they start running out of space */
+    .actions, #delete-actions {
+        flex-wrap: wrap;
+    }
+}
+
+/* --- PHONES / SMALL DEVICES (Max Width: 768px) --- */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 15px 10px; /* Maximize screen real estate on phones */
+    }
+
+    .table-container {
+        padding: 15px 10px;
+        border-radius: 10px;
+        box-shadow: none; /* Soften shadow on mobile */
+        border: none; /* Remove border to save space */
+    }
+
+    h1 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    /* Make action buttons stack on top of each other nicely */
+    .actions, #delete-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .actions button, #delete-actions button {
+        width: 100%; /* Full width buttons for easy thumb tapping */
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    /* MAGIC MOBILE TABLE:
+       This prevents the table from squishing or breaking the page.
+       It forces the table to stay in a neat row and lets the user
+       swipe horizontally to see the rest of the columns!
+    */
+    table {
+        display: block;
+        overflow-x: auto; /* Adds horizontal scrolling */
+        white-space: nowrap; /* Stops text from wrapping to 100 lines */
+        -webkit-overflow-scrolling: touch; /* Smooth swiping on iPhones */
+        border-radius: 8px;
+    }
+
+    /* Adjust table fonts for phone */
+    th, td {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    /* Smaller inner buttons (Navigate, Delete) so they fit better */
+    button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}
+
+/* --- VERY SMALL PHONES (Max Width: 480px) --- */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+    th, td {
+        font-size: 12px;
+    }
+}
