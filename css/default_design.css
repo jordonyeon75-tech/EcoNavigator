@@ -1,0 +1,361 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7f9;
+    color: #333;
+}
+
+/* Top header */
+.page-header {
+    background: #2d8f5a;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Home button */
+.home-btn {
+    padding: 8px 16px;
+    background: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.home-btn:hover {
+    background: #218838;
+}
+
+.page-nav {
+    display: flex;
+    gap: 20px;
+}
+
+/* Navigation links */
+.page-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.page-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Page container */
+.page-container {
+    max-width: 900px;
+    margin: 30px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Page title */
+.page-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #2d8f5a;
+}
+
+/* Paragraph */
+.page-content p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* Footer */
+.page-footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #777;
+}
+
+/* Hamburger button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+}
+
+/* Sidebar for mobile */
+.sidebar {
+    position: fixed;
+    top: 50px; /* give a little margin from top if you want header space */
+    right: 10px; /* slightly away from screen edge for border-radius effect */
+    width: 260px;
+    max-height: calc(100% - 60px); /* allow some margin */
+    background: #2d8f5a;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 20px;
+    gap: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    border-radius: 10px; /* rounded corners */
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* subtle shadow like Google */
+}
+
+/* Sidebar header */
+.sidebar-header {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+}
+
+/* Sidebar links */
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 8px;
+    border-radius: 5px;
+}
+
+/* Active link highlight */
+.sidebar a.active {
+    background: rgba(0,0,0,0.2); /* slightly darker */
+}
+
+/* Hover effect */
+.sidebar a:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* Divider line */
+.sidebar hr {
+    border: 0;
+    height: 1px;
+    background: rgba(255,255,255,0.3);
+    margin: 5px 0;
+}
+
+/* Active sidebar */
+.sidebar.active {
+    transform: translateX(0);
+}
+
+/* ===== Google-style Footer ===== */
+.eco-footer {
+    border-top: 1px solid #ddd;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    font-size: 14px;
+    color: #555;
+}
+
+.eco-footer-left a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #555;
+}
+
+.eco-footer-left a:hover {
+    text-decoration: underline;
+}
+
+.eco-footer-brand {
+    font-weight: bold;
+    color: #333;
+}
+
+.eco-language-select {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+}
+
+/* Sticky footer layout */
+.page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-container {
+    flex: 1;
+}
+
+#sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4); /* dimmed black */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 900; /* under sidebar but above page */
+}
+
+#sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+#google_translate_element select {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* Footer responsive */
+@media screen and (max-width: 600px) {
+    .eco-footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+/* ===== Contact Us Form Styles ===== */
+.contact-form-wrapper {
+    max-width: 100%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box; /* Ensures padding doesn't break layout */
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #28a745;
+    outline: none;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.2);
+}
+
+/* Style for the Read-Only Support Email */
+.form-control.readonly-email {
+    background-color: #e9ecef;
+    color: #555;
+    cursor: not-allowed;
+    border-color: #d1d3e2;
+    font-weight: bold;
+}
+
+/* Textarea specific */
+textarea.form-control {
+    resize: vertical; /* Allow vertical resizing only */
+    min-height: 120px;
+}
+
+/* Character Counter */
+.char-count {
+    font-size: 12px;
+    color: #666;
+    text-align: right;
+    margin-top: 5px;
+}
+
+.char-count.warning {
+    color: #dc3545; /* Red color when limit hit */
+    font-weight: bold;
+}
+
+/* Error Messages */
+.error-text {
+    color: #dc3545;
+    font-size: 13px;
+    margin-top: 5px;
+    display: none; /* Hidden by default */
+}
+
+/* Submit Button */
+.btn-submit {
+    background: #28a745;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background: #218838;
+}
+
+/* Success/Error Alert Box */
+.alert-box {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    display: none; /* Hidden by default */
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Responsive */
+@media screen and (min-width: 769px) {
+    .sidebar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .page-nav {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .sidebar {
+        display: flex;
+    }
+}

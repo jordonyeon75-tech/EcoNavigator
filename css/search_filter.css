@@ -1,0 +1,66 @@
+/* Filter Modal Styling */
+.filter-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+.filter-modal .filter-content {
+    background: #222;
+    color: #fff;
+    padding: 20px;
+    width: 90%;
+    max-width: 350px;
+    border-radius: 10px;
+}
+.filter-modal h2 {
+    margin-top: 0;
+}
+.filter-modal label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.filter-modal select, .filter-modal input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.filter-modal .filter-actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.filter-modal button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+.filter-modal button#close-filter-btn {
+    background: #f44336;
+}
+
+.clear-filter-btn {
+    background:#f44336; color:#fff;
+}
+@media (max-width: 480px) {
+    .filter-modal .filter-content {
+        width: 95%;
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .filter-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

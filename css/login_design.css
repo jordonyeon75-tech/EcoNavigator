@@ -1,0 +1,265 @@
+/* General Page Styling */
+body {
+    background-color: #151515;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* The Login Card */
+.login-container {
+    background-color: #1a1a1a;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid #1f1f1f;
+}
+
+h2 {
+    margin-bottom: 25px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: white; /* Changed from previous green to match theme */
+}
+
+/* Input Styling */
+.input-group {
+    margin-bottom: 15px;
+}
+
+input[type="email"],
+input[type="password"],
+.password-group input {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #1f1f1f;
+    border: 1px solid #1a1a1a;
+    border-radius: 6px;
+    color: white;
+    box-sizing: border-box;
+    transition: border 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #555;
+}
+
+/* Remember Me Checkbox */
+.remember {
+    text-align: left;
+    margin: 15px 0;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.remember input {
+    width: auto;
+    cursor: pointer;
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: white;
+    color: #151515;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Links (Forgot Password / Register) */
+.links {
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.links a {
+    color: #888;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.links a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Status Messages */
+.message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.error {
+    background-color: rgba(255, 77, 77, 0.1);
+    color: #ff4d4d;
+    border: 1px solid #ff4d4d;
+}
+
+.info {
+    background-color: rgba(77, 251, 77, 0.1);
+    color: #4dfb4d;
+    border: 1px solid #4dfb4d;
+}
+
+/* --- Social Login Icons --- */
+.social-login {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    margin-top: 0; /* Changed! Removed extra top gap */
+}
+
+/* --- OR Separator with perfectly balanced lines --- */
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #888;
+    margin: 15px 0 10px 0; /* Spacing between button and text */
+    width: 100%;
+    font-size: 12px;
+}
+
+.separator::before,
+.separator::after {
+    content: "";
+    flex: 1; /* This forces both lines to take up the exact same amount of space! */
+    border-bottom: 1px solid #444; /* Dark gray line color */
+}
+
+.separator::before {
+    margin-right: 15px; /* Space between left line and OR */
+}
+
+.separator::after {
+    margin-left: 15px; /* Space between OR and right line */
+}
+
+/* New Sign In Text */
+.sign-in-text {
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 15px; /* Space between text and icons */
+    font-weight: 500;
+}
+
+.icon-btn-wrapper {
+    position: relative;
+    width: 65px; /* Nice and big! */
+    height: 65px;
+}
+
+/* Invisible overlay to capture Google click securely */
+.google-iframe-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.01; /* Practically invisible but still fully clickable */
+    z-index: 10;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* Ensure Google's secure iframe stretches across the whole button */
+.google-iframe-overlay iframe {
+    transform: scale(2);
+    transform-origin: center;
+    pointer-events: auto !important;
+}
+
+/* The visible custom buttons */
+.custom-icon-btn {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Perfect circles */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px; /* Large F icon */
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Specific Google Styling */
+.google-btn {
+    background-color: white;
+}
+
+.google-btn img {
+    width: 32px; /* Large G icon */
+    height: 32px;
+}
+
+.icon-btn-wrapper:hover .google-btn {
+    background-color: #f1f1f1;
+    transform: translateY(-4px); /* Satisfying float effect */
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Specific Facebook Styling */
+.facebook-btn {
+    background-color: #1877f2;
+    color: white;
+}
+
+.icon-btn-wrapper:hover .facebook-btn {
+    background-color: #166fe5;
+    transform: translateY(-4px); /* Satisfying float effect */
+    box-shadow: 0 6px 15px rgba(24, 119, 242, 0.4);
+}
+
+/* --- Password Toggle Styling --- */
+.password-group {
+    position: relative;
+}
+
+/* Ensure text doesn't type under the eye icon */
+.password-group input[type="password"],
+.password-group input[type="text"] {
+    padding-right: 40px;
+}
+
+/* Position the eye icon perfectly to the right */
+.password-toggle-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px; /* Adjust size if your image is too big/small */
+    height: 20px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.password-toggle-icon:hover {
+    opacity: 1; /* Highlights slightly when the user hovers over it */
+}
